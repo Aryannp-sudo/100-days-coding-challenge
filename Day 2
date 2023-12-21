@@ -1,0 +1,35 @@
+toady i wrote a code for executing thread class by extending Thread Class.
+package com.company;
+
+class MyThread1 extends Thread{
+    @Override
+    public void run(){
+        int i =0;
+        while(i<1000){
+            System.out.println("two");
+            i++;
+        }
+    }
+}
+
+class MyThread2 extends Thread{
+    @Override
+    public void run(){
+        int i =0;
+        while(i<1000){
+            System.out.println("one");
+
+            i++;
+        }
+    }
+}
+
+public class AN_70_thread {
+    public static void main(String[] args) {
+        MyThread1 t1 = new MyThread1();
+        MyThread2 t2 = new MyThread2();
+        t1.run();
+        t2.run();
+
+    }
+}
